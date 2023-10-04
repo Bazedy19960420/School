@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using School.core;
 using School.core.MiddleWare;
+using School.data.Entities.AuthEntities;
 using School.infrastructure;
 using School.infrastructure.Data;
 using School.service;
@@ -14,7 +16,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 #region Add Dependencies
 builder.Services.AddInfrastructureDependencies().AddServiceDependencies().AddCoreDependencies();
 

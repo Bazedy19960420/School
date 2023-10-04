@@ -15,7 +15,9 @@
   <ItemGroup>
     <Folder Include="Features\Departments\Commands\" />
     <Folder Include="Features\Students\Quries\Validators\" />
+    <Folder Include="Features\User\Queries\" />
     <Folder Include="Mapping\Departments\CommandMapping\" />
+    <Folder Include="Mapping\User\QueryMapping\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +26,9 @@
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.7.1" />
     <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.11" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.11" />
     <PackageReference Include="NPOI" Version="2.6.2" />
   </ItemGroup>
 

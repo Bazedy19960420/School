@@ -9,19 +9,26 @@
         public static class Students
         {
             public const string Controller = "students";
-            public const string GetStudentList = rule + Controller+"/List";
+            public const string GetStudentList = rule + Controller + "/List";
             public const string GetStudentById = rule + Controller + SingleRoute;
-            public const string Create = rule + Controller+"/create";
-            public const string Edit = rule + Controller+"/Edit";
-            public const string Delete = rule + Controller+"/Delete"+SingleRoute;
-            public const string Paginated = rule + Controller+"/Paginated";
+            public const string Create = rule + Controller + "/create";
+            public const string Edit = rule + Controller + "/Edit";
+            public const string Delete = rule + Controller + "/Delete" + SingleRoute;
+            public const string Paginated = rule + Controller + "/Paginated";
 
         }
         public static class Departments
         {
             const string Controller = "departments";
-            public const string GetDepartmentList = rule + Controller+"/List";
+            public const string GetDepartmentList = rule + Controller + "/List";
             public const string GetDepartmentById = rule + Controller + SingleRoute;
+        }
+        public static class Auth
+        {
+            const string Controller = "auth";
+            public const string Login = rule + Controller + "/login";
+            public const string Register = rule + Controller + "/register";
+            public const string Logout = rule + Controller + "/logout";
         }
     }
 }

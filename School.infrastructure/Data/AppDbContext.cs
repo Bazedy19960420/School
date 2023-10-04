@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using School.data.Entities;
+using School.data.Entities.AuthEntities;
 
 namespace School.infrastructure.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -30,6 +33,15 @@ namespace School.infrastructure.Data
             modelBuilder.Entity<StudentSubject>().HasOne(ss => ss.Subject).WithMany(s => s.StudentsSubjects).HasForeignKey(ss => ss.SubID).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<InsSubject>().HasOne(ins => ins.Instructor).WithMany(i => i.InsSubjects).HasForeignKey(ins => ins.InsId).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<InsSubject>().HasOne(ins => ins.Subject).WithMany(s => s.InsSubjects).HasForeignKey(ins => ins.SubId).OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<ApplicationUser>().ToTable("Users", "Security");
+            modelBuilder.Entity<IdentityRole>().ToTable("Roles", "Security");
+            modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles", "Security");
+            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims", "Security");
+            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins", "Security");
+            modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims", "Security");
+            modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens", "Security");
+
+
         }
     }
 
