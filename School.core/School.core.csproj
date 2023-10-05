@@ -15,9 +15,7 @@
   <ItemGroup>
     <Folder Include="Features\Departments\Commands\" />
     <Folder Include="Features\Students\Quries\Validators\" />
-    <Folder Include="Features\User\Queries\" />
     <Folder Include="Mapping\Departments\CommandMapping\" />
-    <Folder Include="Mapping\User\QueryMapping\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -29,6 +29,11 @@
             public const string Login = rule + Controller + "/login";
             public const string Register = rule + Controller + "/register";
             public const string Logout = rule + Controller + "/logout";
+            public const string UserList = rule + Controller + "/userlist";
+            public const string UserById = rule + Controller + "/userbyid" + SingleRoute;
+            public const string UpdateUser = rule + Controller + "/updateuser";
+            public const string DeleteUser = rule + Controller + "/deleteuser" + SingleRoute;
+            public const string ChangePassword = rule + Controller + "/changepassword";
         }
     }
 }
